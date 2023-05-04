@@ -26,8 +26,8 @@ describe('The FruitEater function ', function(){
 
     it('should return 0 when no fruit has been eaten', function(){
         var appleAndPearEater = FruitEater();
-        appleAndPearEater.eat('');
-        appleAndPearEater.eat('');
+        appleAndPearEater.eat();
+        appleAndPearEater.eat();
         assert.equal(appleAndPearEater.pearsEaten(), 0);
     });
 })

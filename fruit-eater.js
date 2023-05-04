@@ -2,24 +2,25 @@ function FruitEater() {
   var appleCount = 0;
   var pearCount = 0;
 
+  function eat(fruit) {
+    if (fruit === 'apple') {
+      appleCount++;
+    } else if (fruit === 'pear') {
+      pearCount++;
+    }
+  }
+  function applesEaten() {
+    return appleCount;
+  }
+  function pearsEaten() {
+    return pearCount;
+  }
+
   return {
-    eat:
-      function (fruit) {
-        if (fruit === 'apple') {
-          appleCount++;
-        } else if (fruit === 'pear') {
-          pearCount++;
-        }
-      },
+    FruitEater,
+    eat,
+    applesEaten,
+    pearsEaten
 
-    applesEaten:
-      function () {
-        return appleCount;
-      },
-
-    pearsEaten:
-      function () {
-        return pearCount;
-      }
   }
 }
