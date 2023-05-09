@@ -1,0 +1,29 @@
+In JavaScript, a Factory Function is a function that returns an object. The object can have properties, methods, or both, and can be used to create multiple instances of the object.
+
+The main idea behind a Factory Function is to provide a way to create objects with a consistent structure and behavior without having to manually create each object separately. This can be particularly useful when creating multiple instances of an object that have similar properties and methods, but differ in some way.
+
+To create person object in factory function example:
+
+function createPerson(name, age) {
+  return {
+    name: name,
+    age: age,
+    sayHello: function() {
+      console.log("Hello, my name is " + this.name + " and I am " + this.age + " years old.");
+    }
+  };
+}
+
+This Factory Function takes two arguments, name and age, and returns an object with properties for name and age, as well as a sayHello method that logs a message to the console.
+
+To create a new person object using this Factory Function, you can simply call it with the desired values for name and age:
+
+var person1 = createPerson("John", 30);
+var person2 = createPerson("Jane", 25);
+
+This creates two separate person objects, each with their own values for name and age, but sharing the same structure and behavior defined in the Factory Function. You can then call the sayHello method on each object to log their respective messages to the console:
+
+person1.sayHello(); // "Hello, my name is John and I am 30 years old."
+person2.sayHello(); // "Hello, my name is Jane and I am 25 years old."
+
+Overall, Factory Functions can be a useful tool in JavaScript for creating objects with consistent structures and behaviors, and for avoiding the repetition of manual object creation.
