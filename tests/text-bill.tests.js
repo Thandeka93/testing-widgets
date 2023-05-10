@@ -21,8 +21,10 @@ describe('The test-bill function', function (){
     it("should be able to return warning when the warning level is reached", function(){
         var textBill=calculateTextBill("call");
         
-        textBill.totalBill("Call,call,call,CALL,CALL,call,call, call,call,call,call,CALL,SMS,sms,sms,sms,sms")
-        console.log(textBill.totalBill())
+        textBill.billTotal("Call,call,call,CALL,CALL,call,call, call,call,call,call,CALL,SMS,sms,sms,sms,sms,sms")
+        console.log(textBill.billTotal())
+
+        textBill.totalBillCost()
         assert.equal("warning", textBill.warningLevel()) 
     
        });
@@ -30,8 +32,8 @@ describe('The test-bill function', function (){
        it("should be able to return critical when the critical level is reached", function(){
         var textBill=calculateTextBill("call");
         
-        textBill.totalBill("Call,call,call,CALL,CALL,call,call, call,call,call,call,CALL,SMS,sms,sms,sms,sms")
-        console.log(textBill.totalBill())
+        textBill.billTotal("Call,call,call,CALL,CALL,call,call, call,call,SMS,sms,sms,sms,sms,Call,call,call,CALL,CALL,call,call, call,call,call,call,CALL")
+        console.log(textBill.billTotal())
         assert.equal("critical", textBill.criticalLevel()) 
     
        });

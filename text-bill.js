@@ -2,6 +2,8 @@ function calculateTextBill() {
   var callCost = 2.25;
   var smsCost = 0.75;
   var totalCost = 0;
+  var warning ='';
+  
 
   function billTotal(textBill) {
     let billEntered = textBill.toLowerCase().split(',');
@@ -22,27 +24,29 @@ function calculateTextBill() {
   function smsBill() {
     return smsCost;
   }
-  function totalBill() {
+  function totalBillCost() {
     return totalCost.toFixed(2);
   }
   function warningLevel() {
-    if (totalBill() >= 30 && totalBill() < 50) {
-      return "warning";
+    if (totalBillCost() >= 30 && totalBillCost() < 50) {
+      warning="warning";
     }
+    return warning
   }
   function criticalLevel() {
-    if (totalBill > 50) {
+    if (totalBillCost() > 50) {
       return "critical";
     }
+    
   }
 
   return {
     billTotal,
     callBill,
     smsBill,
-    totalBill,
     warningLevel,
-    criticalLevel
+    criticalLevel,
+    totalBillCost
 
   };
 }
