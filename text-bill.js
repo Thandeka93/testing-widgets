@@ -2,7 +2,7 @@ function calculateTextBill() {
   var callCost = 2.25;
   var smsCost = 0.75;
   var totalCost = 0;
-  var warning ='';
+ 
   
 
   function billTotal(textBill) {
@@ -29,9 +29,9 @@ function calculateTextBill() {
   }
   function warningLevel() {
     if (totalBillCost() >= 30 && totalBillCost() < 50) {
-      warning="warning";
+      return "warning";
     }
-    return warning
+    
   }
   function criticalLevel() {
     if (totalBillCost() > 50) {
